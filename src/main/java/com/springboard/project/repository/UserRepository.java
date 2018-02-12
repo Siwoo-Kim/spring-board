@@ -4,7 +4,7 @@ import com.springboard.project.domain.User;
 
 public interface UserRepository {
 
-    public User create(User user);
-
+    User create(User user);
+    User findByEmailAndPassword(String email, String password);
 
 }
