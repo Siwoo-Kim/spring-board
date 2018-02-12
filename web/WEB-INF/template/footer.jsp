@@ -11,7 +11,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <footer class="blog-footer">
-    <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+    <p> Spring Board Project by <a href="skim327@myseneca.ca">SiWoo Kim</a>.</p>
     <p>
         <a href="#">Back to top</a>
     </p>
