@@ -32,6 +32,8 @@ public class WebConfig extends WebMvcConfigurationSupport{
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/public/**").addResourceLocations("classpath:/static/");   /* css && javascript */
+        registry.addResourceHandler("/webjars/bootstrap/**").addResourceLocations("classpath:/META-INF/resources/webjars/bootstrap/4.0.0/dist/"); /* bootstrap && jquery */
+        registry.addResourceHandler("/webjars/jquery/**").addResourceLocations("classpath:/META-INF/resources/webjars/jquery/2.1.3/dist/"); /* bootstrap && jquery */
     }
 
 
