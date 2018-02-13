@@ -32,7 +32,7 @@ public class JournalRepositoryTest {
         log.warning(journal::toString);
     }
 
-    private Journal createJournal() {
+    public static Journal createJournal() {
         return Journal.builder()
                 .title("title1")
                 .content("content should enough space to hold many characters content should enough space to hold many characters content should enough space to hold many characters ")

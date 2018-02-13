@@ -21,8 +21,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration(
-        classes = WebConfig.class)
+@ContextConfiguration(classes = WebConfig.class)
 public class HomeControllerTest {
 
     /* Testing HomeController */

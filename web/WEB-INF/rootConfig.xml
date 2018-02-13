@@ -29,6 +29,8 @@
     <!--properties for application environment-->
     <context:property-placeholder location="classpath:/app_properties/*.properties" />
 
+        <!--component scanning -->
+    <context:component-scan base-package="com.springboard.project.service" />
 
     <!--datasource-->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
