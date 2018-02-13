@@ -39,5 +39,7 @@ public class WebConfig extends WebMvcConfigurationSupport{
 
     @Bean(name = "homeView")
     String homeView(){    return "home";    }
+    @Bean(name = "postForm")
+    String postFormView(){    return "journal/postForm";    }
 
 }

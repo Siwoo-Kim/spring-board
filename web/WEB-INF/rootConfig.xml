@@ -5,6 +5,7 @@
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
        xmlns:util="http://www.springframework.org/schema/util"
        xmlns:jpa="http://www.springframework.org/schema/data/jpa"
        xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring
@@ -31,6 +32,7 @@
 
         <!--component scanning -->
     <context:component-scan base-package="com.springboard.project.service" />
+    <context:component-scan base-package="com.springboard.project.repository" />
 
     <!--datasource-->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
@@ -39,6 +41,7 @@
           p:username="${dataSource.user}"
           p:password="${dataSource.password}"/>
 
+    <!--mybatis-->
     <!--SqlSessionFactoryBean-->
     <bean id="sqlSessionFactory"
           class="org.mybatis.spring.SqlSessionFactoryBean"
@@ -46,6 +49,13 @@
           p:configLocation="${mybatis.configuration.location}"
           p:mapperLocations="${mybatis.mapper.location}"
     />
+
+    <bean id="sqlSession"
+          class="org.mybatis.spring.SqlSessionTemplate"
+          destroy-method="clearCache"
+          c:sqlSessionFactory-ref="sqlSessionFactory"
+    ></bean>
+
 
     <!--spring jpa-->
     <jpa:repositories base-package="com.springboard.project.repository" />

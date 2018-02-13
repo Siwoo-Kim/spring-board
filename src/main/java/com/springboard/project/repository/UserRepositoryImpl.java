@@ -6,13 +6,15 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.HashMap;
 import java.util.Map;
 
-@Repository @Log
+@Log
+@Repository @Transactional(readOnly = true)
 public class UserRepositoryImpl implements UserRepository {
 
     @PersistenceContext
@@ -22,7 +24,7 @@ public class UserRepositoryImpl implements UserRepository {
     @Value("${mybatis.mapper.namespace.user}")
     private String NAMESPACE;
 
-    @Override
+    @Override @Transactional(readOnly = false)
     public User create(User user) {
         entityManager.persist(user);
         return user;

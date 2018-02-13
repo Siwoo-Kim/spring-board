@@ -1,0 +1,14 @@
+
+.post-header{
+    text-align: center;
+    background-color: #6082a8;
+    text-align: center;
+}
+.post-title{
+    font-size: x-large;
+    font-weight: bold;
+}
+.btn-group-wrapper{
+    text-align: center;
+    margin-top: 25px
+}
