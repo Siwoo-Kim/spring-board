@@ -12,7 +12,9 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/template/script.jsp" ></jsp:include>
-    <c:url var="cssUrl" value="/public/postForm.css"></c:url>
+    <%--<c:url var="cssUrl" value="/public/postForm.css"></c:url>--%>
+    <c:url value="/resources/css/postForm.css" var="cssUrl"></c:url>
+
     <link href="${cssUrl}" rel="stylesheet">
     <title>Home</title>
 </head>
@@ -34,14 +36,15 @@
     <div class="row">
         <div class="col-12 blog-main">
             <div class="card">
-                <div class="card-header alert alert-primary post-header" >
+                <div class="card-header post-header" >
                     <p class="card-title post-title" >Posting Journal</p>
                 </div>
                 <div class="card-body">
-                    <form:form class="form-group" modelAttribute="newJournal">
+                    <form:form cssClass="form-group" modelAttribute="newJournal">
                         <div class="form-group row offset-1">
-                            <label class="col-2">Title</label>
+                            <label class="col-0.5 label-wrapper"><i class="fas fa-bolt"></i>&nbsp;Title :> </label>
                             <form:input type="text"
+                                   name="title"
                                    cssClass="form-control col-7"
                                    placeholder="Enter title..."
                                    path="title"
@@ -49,19 +52,18 @@
                         </div>
 
                         <div class="from-group">
-                            <label>Textarea</label>
-                            <form:textarea
-                                    rows="15"
-                                    name="content"
-                                    cssClass="form-control"
-                                    placeholder="type journal.."
-                                    path="content"
+                            <label class="label-wrapper"><i class="fab fa-adn"></i>&nbsp; Textarea</label>
+                            <form:textarea rows="15"
+                                      name="content"
+                                      cssClass="form-control"
+                                      placeholder="type journal.."
+                                      path="content"
                             ></form:textarea>
                         </div>
 
-                        <div class="form-group btn-group-wrapper" >
+                        <div class="form-group btn-group-wrapper" style="">
                             <button type="submit" class="btn btn-default">Submit</button>
-                            <a type="submit" class="btn btn-default">Go back</a>
+                            <button type="submit" class="btn btn-danger">Go back</button>
                         </div>
                     </form:form>
                 </div>

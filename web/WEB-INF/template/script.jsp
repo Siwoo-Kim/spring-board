@@ -11,13 +11,24 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <%--common css--%>
+<%--
 <c:url value="/public/common.css" var="commonResourceUrl"></c:url>
+--%>
+<c:url value="/resources/css/common.css" var="commonResourceUrl"></c:url>
+
 <%--jquery lib--%>
+
+
 <c:url value="/webjars/jquery/jquery.js" var="jqueryUrl"></c:url>
+
 <%--bootstrap --%>
 <c:url value="/webjars/bootstrap/css/bootstrap.css" var="bootstrapCssUrl"></c:url>
 <c:url value="/webjars/bootstrap/js/bootstrap.js" var="bootstrapJsUrl"></c:url>
 <c:url value="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" var="popperJsUrl"></c:url>
+
+<!--fonts & fontawesome-->
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Dosis|Muli|Noto+Sans|Shadows+Into+Light" rel="stylesheet">
 
 <link rel="stylesheet" href="${commonResourceUrl}" >
 <link rel="stylesheet" href="${bootstrapCssUrl}" >

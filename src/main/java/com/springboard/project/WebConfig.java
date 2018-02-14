@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -36,10 +37,15 @@ public class WebConfig extends WebMvcConfigurationSupport{
         registry.addResourceHandler("/webjars/jquery/**").addResourceLocations("classpath:/META-INF/resources/webjars/jquery/2.1.3/dist/"); /* bootstrap && jquery */
     }
 
+    @Override
+    protected void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
+    }
 
     @Bean(name = "homeView")
     String homeView(){    return "home";    }
-    @Bean(name = "postForm")
+    @Bean(name = "postFormView")
     String postFormView(){    return "journal/postForm";    }
-
+    @Bean(name = "listView")
+    String listView(){    return "journal/list";    }
 }

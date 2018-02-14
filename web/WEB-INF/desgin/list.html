@@ -14,7 +14,7 @@
 
     <!--fonts & fontawesome-->
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Dosis|Muli|Noto+Sans|Shadows+Into+Light" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Noto+Sans|Nunito|Roboto+Mono|Ubuntu" rel="stylesheet">
 
 </head>
 
@@ -53,46 +53,61 @@
 
 <!--css file-->
 <link href="css/common.css" rel="stylesheet">
-<link href="css/postForm.css" rel="stylesheet">
-
+<link href="css/list.css" rel="stylesheet">
 <main role="main" class="container">
     <div class="row">
         <div class="col-12 blog-main">
+
             <div class="card">
-                <div class="card-header post-header" >
-                    <p class="card-title post-title" >Posting Journal</p>
-                </div>
-                <div class="card-body">
-                    <form class="form-group">
-                        <div class="form-group row offset-1">
-                            <label class="col-0.5 label-wrapper"><i class="fas fa-bolt"></i>&nbsp;Title :> </label>
-                            <input type="text"
-                                   name="title"
-                                   class="form-control col-7"
-                                   placeholder="Enter title..."
-                            >
+                <div class="card-header journal-list-header"><h2 >Journals</h2></div>
+                <div class="card-body journal-list-body">
+                    <div class="row col-12 journal-columns" >
+                        <div class="col-4 journal-column">
+                            <p class="alert" ><h3>Title</h3></p>
+                            content        content        content        content        content
+                            content        content        content        content        content
+                            content        content        content        content        content
+                            <button class="btn btn-default journal-btn" >Details <:</button>
                         </div>
 
-                        <div class="from-group">
-                            <label class="label-wrapper"><i class="fab fa-adn"></i>&nbsp; Textarea</label>
-                            <textarea rows="15"
-                                      name="content"
-                                      class="form-control"
-                                      placeholder="type journal.."
-                            ></textarea>
+                        <div class="col-4 journal-column">
+                            <p class="alert" ><h3>Title</h3></p>
+                            content        content        content        content        content
+                            content        content        content        content        content
+                            content        content        content        content        content
+                            <button class="btn btn-default journal-btn" >Details <:</button>
                         </div>
 
-                        <div class="form-group btn-group-wrapper" >
-                            <button type="submit" class="btn btn-default">Submit</button>
-                            <button type="submit" class="btn btn-danger">Go back</button>
+                        <div class="col-4 journal-column">
+                            <p class="alert" ><h3>Title</h3></p>
+                            content        content        content        content        content
+                            content        content        content        content        content
+                            content        content        content        content        content
+                            <button class="btn btn-default journal-btn" >Details <:</button>
                         </div>
-                    </form>
+
+                        <div class="col-4 journal-column">
+                            <p class="alert" ><h3>Title</h3></p>
+                            content        content        content        content        content
+                            content        content        content        content        content
+                            content        content        content        content        content
+                            <button class="btn btn-default journal-btn" >Details <:</button>
+                        </div>
+                    </div>
                 </div>
+
+                <nav class="blog-pagination journal-pagination" >
+                    <a class="btn btn-outline-primary" href="#">Previous</a>
+                    <a class="btn btn-outline-secondary disabled" href="#">Next</a>
+                </nav>
+
+
             </div>
+
+
+
         </div><!-- /.blog-main -->
-
     </div><!-- /.row -->
-
 </main><!-- /.container -->
 
 <footer class="blog-footer">

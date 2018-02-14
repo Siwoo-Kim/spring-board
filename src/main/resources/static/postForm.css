@@ -1,14 +1,25 @@
 
 .post-header{
-    text-align: center;
-    background-color: #6082a8;
-    text-align: center;
+    border-top: 4px solid #1d262c;
 }
+
 .post-title{
+    font-family: 'Noto Sans', sans-serif;
     font-size: x-large;
     font-weight: bold;
 }
+
 .btn-group-wrapper{
     text-align: center;
     margin-top: 25px
 }
+
+.label-wrapper{
+    margin-top: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    font-family: 'Dosis', sans-serif;
+    border-bottom: 2px solid;
+    margin-right: 20px;
+}
+

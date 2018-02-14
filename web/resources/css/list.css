@@ -1,0 +1,31 @@
+.journal-list-header{
+    border-top: 4px solid;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: white;
+}
+
+.journal-list-header>h2{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.journal-list-body{
+    margin-bottom: 45px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9em
+}
+
+.journal-columns{
+    margin: auto;
+}
+
+.journal-column>p>h3{
+    font-family: 'Roboto Mono';
+}
+
+.journal-btn{
+    margin-top: 15px;
+}
+
+.journal-pagination{
+    text-align: center;
+}

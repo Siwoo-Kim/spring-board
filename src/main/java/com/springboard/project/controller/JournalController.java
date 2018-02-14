@@ -7,7 +7,6 @@ import com.springboard.project.service.JournalService;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,7 +20,8 @@ public class JournalController {
 
     @Autowired JournalService journalService;
     @Autowired UserRepository userRepository;
-    @Autowired @Qualifier("postForm") String postForm;
+    @Autowired @Qualifier("postFormView") String postFormView;
+    @Autowired @Qualifier("listView") String listView;
 
     @InitBinder("newJournal")
     public void newJournalDataBinder(WebDataBinder binder){
@@ -30,7 +30,7 @@ public class JournalController {
 
     @GetMapping("/post")
     public String postForm(@ModelAttribute("newJournal") Journal journal){
-        return postForm;
+        return postFormView;
     }
 
     /*creating mock user*/
@@ -43,13 +43,18 @@ public class JournalController {
 
         /*inserting mock user*/
         if(isFirstCall){ userRepository.create(user); isFirstCall = false; }
-
         journal.setUser(user);
         journal = journalService.post(journal,bindingResult);
         log.warning(journal::toString);
 
-        if(bindingResult.hasErrors()){  return postForm; }
+        if(bindingResult.hasErrors()){  return postFormView; }
         return "redirect:/success";
+    }
+
+    @GetMapping
+    public String listAll(Model model){
+        model.addAttribute(journalService.getJournals());
+        return listView;
     }
 
 }
